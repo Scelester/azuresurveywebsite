@@ -12,7 +12,7 @@ class Survey_questions(models.Model):
 
 class Survey_answers(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
-    question = models.ForeignKey(Survey_answers, on_delete) 
+    question = models.ForeignKey(Survey_questions, on_delete) 
     answer = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
