@@ -4,6 +4,7 @@
     <div class="d-flex flex-column align-items-center">
         <p><h1> Survey Questions </h1></p>
         <form action="/" method="post" class="d-flex flex-column align-items-center">
+            {% csrf_token %}
         {% for que in Questions %}
             <div class="m-3 border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
                 <label for="{{que.id}}" class="lead ">{{que.question}}</p>
