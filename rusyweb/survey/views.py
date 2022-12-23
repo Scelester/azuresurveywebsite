@@ -8,7 +8,10 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 
 # Create your views here.
 def index(request):
-    return render(request, 'surveyapp/index.html')
+	if request.user.is_authenticated():
+		return render(request, 'surveyapp/index.html')
+	else:
+		return render(request, 'surveyapp/index.html')
 
 
 
