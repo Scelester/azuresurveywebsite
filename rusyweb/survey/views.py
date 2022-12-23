@@ -9,9 +9,9 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 # Create your views here.
 def index(request):
 	if request.user.is_authenticated():
-		return render(request, 'surveyapp/index.html')
+		return render(request, 'surveyapp/index.html')	
 	else:
-		return render(request, 'surveyapp/index.html')
+		return redirect("surveyapp:")
 
 
 
@@ -22,7 +22,7 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("surveyapp:homepage")
+			return redirect("survey:index")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 
 	form = NewUserForm()
