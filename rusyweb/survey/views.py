@@ -56,4 +56,4 @@ def logout_request(request):
 
 
 def thanks_request(request):
-	return render(request=request, template_name="surveyapp/thanks")
+	return render(request=request, template_name="surveyapp/thanks.html")
