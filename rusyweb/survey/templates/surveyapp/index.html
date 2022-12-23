@@ -5,8 +5,8 @@
         <p><h1> Survey Questions </h1></p>
         {% for que in Questions %}
             <div class="m-3 border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
-                <p class="lead">{{que}}</p>
-                <input type="text"/>
+                <p class="lead ">{{que}}</p>
+                <input style="width:600px" type="text"/>
             </div>
         {% endfor %}
     </div>
