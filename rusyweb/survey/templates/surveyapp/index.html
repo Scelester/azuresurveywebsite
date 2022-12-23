@@ -3,13 +3,15 @@
 {% block body %}
     <div class="d-flex flex-column align-items-center">
         <p><h1> Survey Questions </h1></p>
+        <form action="/" method="post">
         {% for que in Questions %}
             <div class="m-3 border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
-                <p class="lead ">{{que}}</p>
-                <input style="width:600px;font: size 25px;" class="answerbox" type="text"/>
+                <label for="{{que.id}}" class="lead ">{{que.question}}</p>
+                <input id="{{que.id}}" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
             </div>
         {% endfor %}
+        <input type="submit" value="Complete Submission ">
+    </form>
 
-        <a href="/thanks" class="btn btn-primary ">Complete Submission</a>
     </div>
 {% endblock %}
