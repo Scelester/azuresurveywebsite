@@ -10,6 +10,8 @@ from survey.models import Survey_question
 def index(request):
 	Questionmod = Survey_question.objects.order_by('created_on')
 	cotxt = {"Questions":Questionmod}
+	if request.method == 'POST':
+		print(request.POST)
 	if request.user.is_authenticated:
 		return render(request, 'surveyapp/index.html',context=cotxt)	
 	else:
@@ -56,4 +58,4 @@ def logout_request(request):
 
 
 def thanks_request(request):
-	return render(request=request, template_name="surveyapp/thanks.html")
+	return render(request=request, template_name="surveyapp/thanks.html")	
