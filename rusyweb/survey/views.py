@@ -10,7 +10,7 @@ def index(request):
 	if request.user.is_authenticated:
 		return render(request, 'surveyapp/index.html')	
 	else:
-		return redirect("surveyapp:")
+		return redirect("surveyapp:login")
 
 
 
