@@ -3,12 +3,15 @@ from .forms import NewUserForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate,logout #add this
 from django.contrib.auth.forms import AuthenticationForm #add this
+from survey.models import Survey_question
 
 
 # Create your views here.
 def index(request):
+	Questionmod = Survey_question.objects.order_by('created_on')
+	cotxt = {"Questions":Questionmod}
 	if request.user.is_authenticated:
-		return render(request, 'surveyapp/index.html')	
+		return render(request, 'surveyapp/index.html',context=cotxt)	
 	else:
 		return redirect("survey:login")
 

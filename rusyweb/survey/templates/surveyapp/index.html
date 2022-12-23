@@ -2,11 +2,11 @@
 
 {% block body %}
     <div class="d-flex flex-column align-items-center">
-        <p>Survey Questions</p>
+        <p><h1> Survey Questions </h1></p>
         {% for que in Questions %}
             <div class="border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
-                <p></p>
-                
+                <p>{que}</p>
+                <input type="text"/>
             </div>
         {% endfor %}
     </div>
