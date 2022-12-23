@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'rusyweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'rusyweb_db',
             'USER':'scelezure',
             'PASSWORD':'2244',
@@ -118,7 +118,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = False # was true
+USE_TZ = False   # was true
 
 
 # Static files (CSS, JavaScript, Images)
