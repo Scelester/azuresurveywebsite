@@ -8,7 +8,7 @@ from django.contrib.auth.forms import AuthenticationForm #add this
 
 # Create your views here.
 def index(request):
-	if request.user.is_authenticated():
+	if request.user.is_authenticated:
 		return render(request, 'surveyapp/index.html')	
 	else:
 		return redirect("surveyapp:")
