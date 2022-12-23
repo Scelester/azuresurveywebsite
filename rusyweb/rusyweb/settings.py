@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ['20.204.21.51','nabin-paudel.com.np']
 INSTALLED_APPS = [
     #my app
     'survey',
+       
+    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'crispy_forms',
+ 
 ]
 
 MIDDLEWARE = [
