@@ -6,8 +6,10 @@
         {% for que in Questions %}
             <div class="m-3 border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
                 <p class="lead ">{{que}}</p>
-                <input style="width:600px;font: size 25px;" type="text"/>
+                <input style="width:600px;font: size 25px;" class="answerbox" type="text"/>
             </div>
         {% endfor %}
+
+        <a href="/thanks" class="btn btn-primary">Complete Submission</a>
     </div>
 {% endblock %}

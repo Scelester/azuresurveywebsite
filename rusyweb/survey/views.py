@@ -53,3 +53,7 @@ def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("survey:index")
+
+
+def thanks_request(request):
+	return render(request=request, template_name="surveyapp/thanks")
