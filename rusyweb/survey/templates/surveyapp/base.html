@@ -4,9 +4,9 @@
     {% block headings %} {% endblock %}
 </head>
 <body>
-    <div class="w-100 d-flex bg-dark text-white pt-3 pb-3">
+    <div class="w-100 bg-dark text-white pt-3 pb-3">
         <h1>Real Survey</h1>
-        <p class="align-self-end justify-self-end ml-auto">{{user.username}}</p>
+        <p class="float-right">{{user.username}}</p>
     </div>
     {% block body %}
     {% endblock %}
