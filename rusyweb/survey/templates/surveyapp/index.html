@@ -6,9 +6,9 @@
         <form action="/" method="post" class="d-flex flex-column align-items-center">
             {% csrf_token %}
             
-                    <label for="{{que.id}}" class="lead ">{{que.question}}</label>
-                    <input type="hidden" name="questionid">
-                    <input id="{{que.id}}" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
+            <label for="1" class="lead ">Nothing</label>
+            <input type="hidden" name="questionid" value="1">
+            <input id="1" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
 
             
             <input type="submit" class="btn btn-primary" value="Complete Submission ">
