@@ -13,10 +13,16 @@ def index(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			sent_data = request.POST
-			print(sent_data.getlist('questionid'))
-			print(sent_data.getlist('answerbox'))
+			queid = sent_data.getlist('questionid')
+			answerbox = sent_data.getlist('answerbox')
+			
+			mighty_answerOBjs = []
+
+			for ansobj,queobj in answerbox,queid:
+				mighty_answerOBjs.append(Survey_answer(author=request.user,answer=ansobj,question=queid))
+
 			Survey_answer.objects.bulk_create(
-				[]
+				
 			)
 			
 
