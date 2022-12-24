@@ -8,7 +8,7 @@
             {% for que in Questions %}
                 <div class="p-1 m-3 border d-flex flex-column border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
                     <label for="{{que.id}}" class="lead ">{{que.question}}</label>
-                    <input type="hidden" name="questionid">
+                    <input type="hidden" name="questionid" value="{{que.id}}">
                     <input id="{{que.id}}" style="width:600px;font: size 25px;" name="answerbox" type="text" maxlength="100" required/>
                 </div>
             {% endfor %}
