@@ -22,7 +22,7 @@ def index(request):
 				mighty_answerOBjs.append(Survey_answer(author=request.user,answer=ansobj,question=Survey_question.objects.get(pk=queobj) ))
 
 			Survey_answer.objects.bulk_create(
-				
+				mighty_answerOBjs
 			)
 			
 
