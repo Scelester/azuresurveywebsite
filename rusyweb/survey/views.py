@@ -18,7 +18,7 @@ def index(request):
 			
 			mighty_answerOBjs = []
 
-			for ansobj,queobj in [answerbox],[queid]:
+			for ansobj,queobj in zip( answerbox,queid):
 				mighty_answerOBjs.append(Survey_answer(author=request.user,answer=ansobj,question=queid))
 
 			Survey_answer.objects.bulk_create(
