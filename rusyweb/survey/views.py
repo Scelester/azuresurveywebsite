@@ -13,6 +13,8 @@ def index(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			print(request.POST)
+			return redirect("survey:thanks")
+			
 		return render(request, 'surveyapp/index.html',context=cotxt)	
 	else:
 		return redirect("survey:login")
