@@ -6,7 +6,7 @@
         <form action="/" method="post" class="d-flex flex-column align-items-center">
             {% csrf_token %}
             {% for que in Questions %}
-                    <label for="{{que.id}}" class="lead ">{{que.question}}</p>
+                    <label for="{{que.id}}" class="lead ">{{que.question}}</label>
                     <input id="{{que.id}}" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
             {% endfor %}
         <input type="submit" class="btn btn-primary" value="Complete Submission ">
