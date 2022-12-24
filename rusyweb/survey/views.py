@@ -10,9 +10,9 @@ from survey.models import Survey_question
 def index(request):
 	Questionmod = Survey_question.objects.order_by('created_on')
 	cotxt = {"Questions":Questionmod}
-	if request.method == 'POST':
-		print(request.POST.dict())
 	if request.user.is_authenticated:
+		if request.method == 'POST':
+			print(request.POST.get(''))
 		return render(request, 'surveyapp/index.html',context=cotxt)	
 	else:
 		return redirect("survey:login")
