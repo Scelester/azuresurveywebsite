@@ -3,7 +3,7 @@ from .forms import NewUserForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate,logout #add this
 from django.contrib.auth.forms import AuthenticationForm #add this
-from survey.models import Survey_question
+from survey.models import Survey_question,Survey_answer
 
 
 # Create your views here.
@@ -12,7 +12,12 @@ def index(request):
 	cotxt = {"Questions":Questionmod}
 	if request.user.is_authenticated:
 		if request.method == 'POST':
-			print(request.POST)
+			sent_data = request.POST.dict
+			Survey_answer.objects.bulk_create(
+				[]
+			)
+			
+
 			return redirect("survey:thanks")	
 			
 		return render(request, 'surveyapp/index.html',context=cotxt)	
