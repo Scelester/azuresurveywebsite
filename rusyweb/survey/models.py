@@ -16,4 +16,4 @@ class Survey_answer(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.answer
+        return self.answer + " --by--"+self.author.username
