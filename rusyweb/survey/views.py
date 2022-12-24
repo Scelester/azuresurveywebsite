@@ -13,7 +13,8 @@ def index(request):
 	if request.user.is_authenticated:
 		if request.method == 'POST':
 			sent_data = request.POST
-			print(sent_data['questionid'])
+			print(sent_data.getlist('questionid'))
+			print(sent_data.getlist('answerbox'))
 			Survey_answer.objects.bulk_create(
 				[]
 			)
