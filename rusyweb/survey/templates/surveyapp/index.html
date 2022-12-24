@@ -5,12 +5,13 @@
         <p><h1> Survey Questions </h1></p>
         <form action="/" method="post" class="d-flex flex-column align-items-center">
             {% csrf_token %}
-            
-            <label for="1" class="lead ">Nothing</label>
-            <input type="hidden" name="questionid" value="1">
-            <input id="1" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
-
-            
+            {% for que in Questions %}
+                <div class="p-1 m-3 border d-flex flex-column border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
+                    <label for="{{que.id}}" class="lead ">{{que.question}}</label>
+                    <input type="hidden" name="questionid">
+                    <input id="{{que.id}}" style="width:600px;font: size 25px;" name="answerbox" type="text" maxlength="100" required/>
+                </div>
+            {% endfor %}
             <input type="submit" class="btn btn-primary" value="Complete Submission ">
     </form>
 
