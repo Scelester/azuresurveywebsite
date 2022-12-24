@@ -5,12 +5,10 @@
         <p><h1> Survey Questions </h1></p>
         <form action="/" method="post" class="d-flex flex-column align-items-center">
             {% csrf_token %}
-        {% for que in Questions %}
-            <div class="m-3 border border-{% cycle 'primary' 'secondary' 'success' 'danger' %}">
-                <label for="{{que.id}}" class="lead ">{{que.question}}</p>
-                <input id="{{que.id}}" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
-            </div>
-        {% endfor %}
+            {% for que in Questions %}
+                    <label for="{{que.id}}" class="lead ">{{que.question}}</p>
+                    <input id="{{que.id}}" style="width:600px;font: size 25px;" class="answerbox" type="text" maxlength="100" required/>
+            {% endfor %}
         <input type="submit" class="btn btn-primary" value="Complete Submission ">
     </form>
 
