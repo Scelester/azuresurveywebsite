@@ -12,7 +12,7 @@ def index(request):
 	cotxt = {"Questions":Questionmod}
 	if request.user.is_authenticated:
 		if request.method == 'POST':
-			print(request.POST.get(''))
+			print(request.POST)
 		return render(request, 'surveyapp/index.html',context=cotxt)	
 	else:
 		return redirect("survey:login")
