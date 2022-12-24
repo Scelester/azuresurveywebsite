@@ -12,8 +12,8 @@ def index(request):
 	cotxt = {"Questions":Questionmod}
 	if request.user.is_authenticated:
 		if request.method == 'POST':
-			sent_data = request.POST.dict()
-			print(sent_data)
+			sent_data = request.POST
+			print(sent_data.get('answerbox'))
 			Survey_answer.objects.bulk_create(
 				[]
 			)
